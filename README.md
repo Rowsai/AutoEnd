@@ -55,16 +55,6 @@ ENDを出力した後、`ActGlobals.oFormActMain.EndCombat(true)` を呼びま�
 3. 次の戦闘を開始し、再び計測・終了することを確認。
 4. コンテンツで全滅した際、ENDが1回出て計測が止まることを確認。
 
-## ビルドと検証状況
-
-ソースは `AutoEnd.cs` と `EndDetector.cs` です。Windows PowerShellで次のようにビルドできます。パスは実際のインストール先に変更してください。
-
-```powershell
-.\build.ps1 -ActExe 'C:\ACT\Advanced Combat Tracker.exe' -OverlayDirectory 'C:\ACT\OverlayPlugin'
-```
-
-ビルド成功。終了判定ロジックは25項目の自動検証に合格しました（通常終了、全滅2形式、重複通知、再戦、インポート無視、不正入力など）。実際のACT/FFXIVプロセスでの読み込み・ログ保存・計測終了は未検証です。
-
 ## 参照した一次資料
 
 - [OverlayPluginの戦闘状態ログ実装](https://github.com/OverlayPlugin/OverlayPlugin/blob/main/OverlayPlugin.Core/MemoryProcessors/InCombat/LineInCombat.cs)
